@@ -178,4 +178,9 @@ return require('packer').startup(function(use)
     requires = { 'hrsh7th/nvim-cmp' }
   }
 
+  use {
+    'windwp/nvim-autopairs',
+    commit = 'b5994e6547d64f781cfca853a1aa6174d238fe0e'
+  }
+
 end)
