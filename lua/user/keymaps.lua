@@ -56,4 +56,5 @@ vim.keymap.set('v', '<Leader>gS', '<esc><cmd>\'<,\'>Gitsigns stage_hunk<CR>gv', 
 vim.keymap.set('n', '<Leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { desc = 'Undo stage hunk' })
 
 -- lsp
-vim.keymap.set('n', '<LocalLeader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code actions' })
+vim.keymap.set('n', '<LocalLeader>aa', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code actions' })
+vim.keymap.set('n', '<LocalLeader>==', '<cmd>lua vim.lsp.buf.format()<CR>', { desc = 'Format buffer' })
