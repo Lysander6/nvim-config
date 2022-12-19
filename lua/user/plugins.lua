@@ -172,4 +172,10 @@ return require('packer').startup(function(use)
     requires = { 'hrsh7th/nvim-cmp' }
   }
 
+  use {
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    commit = 'd2768cb1b83de649d57d967085fe73c5e01f8fd7',
+    requires = { 'hrsh7th/nvim-cmp' }
+  }
+
 end)
