@@ -97,19 +97,6 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     commit = '973aa14d0992df82ff82f714d978a3eb8d676600',
     requires = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
-    config = function()
-      require('lspconfig').rust_analyzer.setup {
-      }
-      require('lspconfig').sumneko_lua.setup {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { 'vim' }
-            }
-          }
-        }
-      }
-    end
   }
 
   use {
@@ -139,10 +126,50 @@ return require('packer').startup(function(use)
     commit = '71644a2907adc076f1c5e712f59d897f5197d5d6'
   }
 
-  use({
+  use {
     'jose-elias-alvarez/null-ls.nvim',
     commit = 'f1182c2d3748da7c94f5288f8054741f26f0cf3b',
-    requires = { "nvim-lua/plenary.nvim" },
-  })
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    commit = '8bbaeda725d5db6e4e1be2867a64b43bf547cf06'
+  }
+
+  use {
+    'hrsh7th/vim-vsnip',
+    commit = 'e44026b5394fd79aa0f2118aaf41627ef9c354ee'
+  }
+
+  use {
+    'hrsh7th/cmp-vsnip',
+    commit = '989a8a73c44e926199bfd05fa7a516d51f2d2752',
+    requires = { 'hrsh7th/nvim-cmp', 'hrsh7th/vim-vsnip' }
+  }
+
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    commit = '59224771f91b86d1de12570b4070fe4ad7cd1eeb',
+    requires = { 'neovim/nvim-lspconfig', 'hrsh7th/nvim-cmp' }
+  }
+
+  use {
+    'hrsh7th/cmp-buffer',
+    commit = '3022dbc9166796b644a841a02de8dd1cc1d311fa',
+    requires = { 'hrsh7th/nvim-cmp' }
+  }
+
+  use {
+    'hrsh7th/cmp-path',
+    commit = '91ff86cd9c29299a64f968ebb45846c485725f23',
+    requires = { 'hrsh7th/nvim-cmp' }
+  }
+
+  use {
+    'hrsh7th/cmp-cmdline',
+    commit = '23c51b2a3c00f6abc4e922dbd7c3b9aca6992063',
+    requires = { 'hrsh7th/nvim-cmp' }
+  }
 
 end)
