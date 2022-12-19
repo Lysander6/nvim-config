@@ -43,3 +43,12 @@ vim.keymap.set('n', '<Leader>fr', '<cmd>Telescope oldfiles theme=ivy<CR>', { des
 
 -- projects
 vim.keymap.set('n', '<Leader>pp', '<cmd>Telescope projects theme=ivy<CR>', { desc = 'Recent projects' })
+
+-- git
+vim.keymap.set('n', '<Leader>gs', '<cmd>Telescope git_status theme=ivy<CR>', { desc = 'Status' })
+vim.keymap.set('n', '<Leader>gS', '<cmd>Gitsigns stage_hunk<CR>', { desc = 'Stage hunk' })
+vim.keymap.set('v', '<Leader>gS', '<esc><cmd>\'<,\'>Gitsigns stage_hunk<CR>gv', { desc = 'Stage hunk' })
+vim.keymap.set('n', '<Leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { desc = 'Undo stage hunk' })
+
+-- lsp
+vim.keymap.set('n', '<LocalLeader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code actions' })

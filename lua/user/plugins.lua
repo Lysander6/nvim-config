@@ -146,4 +146,10 @@ return require('packer').startup(function(use)
     commit = '71644a2907adc076f1c5e712f59d897f5197d5d6'
   }
 
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    commit = 'f1182c2d3748da7c94f5288f8054741f26f0cf3b',
+    requires = { "nvim-lua/plenary.nvim" },
+  })
+
 end)
