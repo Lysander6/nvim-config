@@ -115,14 +115,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     commit = 'cabf991b1d3996fa6f3232327fc649bbdf676496',
-    requires = { {'nvim-lua/plenary.nvim'} },
-    config = function()
-      require('telescope').setup {
-        defaults = {
-          preview = false
-	      }
-      }
-    end
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use {

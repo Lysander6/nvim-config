@@ -32,20 +32,25 @@ vim.keymap.set('n', '<Leader>sc', '<cmd>let @/ = ""<CR>', { desc = 'Clear highli
 
 vim.keymap.set('n', '<Leader>feR', '<cmd>source .config/nvim/init.lua<CR>', { desc = 'Reload nvim config' })
 
-vim.keymap.set('n', '<Leader><Leader>', '<cmd>Telescope commands theme=ivy<CR>', { desc = "Commands" })
+vim.keymap.set('n', '<Leader><Leader>', '<cmd>Telescope commands<CR>', { desc = "Commands" })
 
 -- buffers
-vim.keymap.set('n', '<Leader>bb', '<cmd>Telescope buffers theme=ivy<CR>', { desc = 'List buffers' })
+vim.keymap.set('n', '<Leader>bb', '<cmd>Telescope buffers<CR>', { desc = 'List buffers' })
 vim.keymap.set('n', '<Leader>bd', '<cmd>bdelete<CR>', { desc = 'Delete buffer' })
 
 -- files
-vim.keymap.set('n', '<Leader>fr', '<cmd>Telescope oldfiles theme=ivy<CR>', { desc = 'Recent files' })
+vim.keymap.set('n', '<Leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Recent files' })
 
 -- projects
-vim.keymap.set('n', '<Leader>pp', '<cmd>Telescope projects theme=ivy<CR>', { desc = 'Recent projects' })
+vim.keymap.set('n', '<Leader>pp', '<cmd>Telescope projects<CR>', { desc = 'Recent projects' })
+vim.keymap.set('n', '<Leader>pf', '<cmd>Telescope find_files<CR>', { desc = 'Project files' })
+
+-- searching
+vim.keymap.set('n', '<Leader>ss', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { desc = 'Swoop buffer' })
+vim.keymap.set('n', '<Leader>sp', '<cmd>Telescope live_grep<CR>', { desc = 'Search in project' })
 
 -- git
-vim.keymap.set('n', '<Leader>gs', '<cmd>Telescope git_status theme=ivy<CR>', { desc = 'Status' })
+vim.keymap.set('n', '<Leader>gs', '<cmd>Telescope git_status<CR>', { desc = 'Status' })
 vim.keymap.set('n', '<Leader>gS', '<cmd>Gitsigns stage_hunk<CR>', { desc = 'Stage hunk' })
 vim.keymap.set('v', '<Leader>gS', '<esc><cmd>\'<,\'>Gitsigns stage_hunk<CR>gv', { desc = 'Stage hunk' })
 vim.keymap.set('n', '<Leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { desc = 'Undo stage hunk' })
