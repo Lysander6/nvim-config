@@ -46,7 +46,8 @@ return require('packer').startup(function(use)
           lualine_x = {'location'},
           lualine_y = {},
           lualine_z = {}
-        }
+        },
+        extensions = {'nvim-tree'}
       }
     end
   }
@@ -181,6 +182,11 @@ return require('packer').startup(function(use)
   use {
     'windwp/nvim-autopairs',
     commit = 'b5994e6547d64f781cfca853a1aa6174d238fe0e'
+  }
+
+  use {
+    'nvim-tree/nvim-tree.lua',
+    commit = 'e14c2895b4f36a22001f7773244041c173dcf867'
   }
 
 end)

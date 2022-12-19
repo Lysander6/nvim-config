@@ -58,3 +58,6 @@ vim.keymap.set('n', '<Leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { desc = 
 -- lsp
 vim.keymap.set('n', '<LocalLeader>aa', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code actions' })
 vim.keymap.set('n', '<LocalLeader>==', '<cmd>lua vim.lsp.buf.format()<CR>', { desc = 'Format buffer' })
+
+-- tree
+vim.keymap.set('n', '<Leader>pt', '<cmd>NvimTreeFindFileToggle!<CR>', { desc = 'File tree' })
