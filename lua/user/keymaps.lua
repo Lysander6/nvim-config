@@ -37,6 +37,7 @@ vim.keymap.set('n', '<Leader><Leader>', '<cmd>Telescope commands<CR>', { desc = 
 -- buffers
 vim.keymap.set('n', '<Leader>bb', '<cmd>Telescope buffers<CR>', { desc = 'List buffers' })
 vim.keymap.set('n', '<Leader>bd', '<cmd>Bdelete<CR>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<Leader><Tab>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
 
 -- files
 vim.keymap.set('n', '<Leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Recent files' })
