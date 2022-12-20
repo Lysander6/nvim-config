@@ -178,4 +178,9 @@ return require('packer').startup(function(use)
     commit = '5f01c1a89adafc52bf34e3bf690f80d9d726715d'
   }
 
+  use {
+    'editorconfig/editorconfig-vim',
+    commit = '30ddc057f71287c3ac2beca876e7ae6d5abe26a0'
+  }
+
 end)
