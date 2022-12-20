@@ -20,4 +20,5 @@ vim.opt.smartcase = true
 
 vim.opt.signcolumn = 'yes'
 
-vim.cmd[[setlocal spell spelllang=en_gb]]
+vim.opt.spell = true
+vim.opt.spelllang = 'en_gb'
