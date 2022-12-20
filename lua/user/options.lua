@@ -14,6 +14,7 @@ vim.opt.number = true
 vim.opt.scrolloff = 4
 vim.opt.sidescrolloff = 4
 
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.signcolumn = 'yes'
