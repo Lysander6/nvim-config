@@ -194,4 +194,10 @@ return require('packer').startup(function(use)
     commit = '25ef93ac5a87526111f43e5110675032dbcacf56'
   }
 
+  use {
+    'TimUntersberger/neogit',
+    commit = '0d6002c6af432343937283fb70791fc76fa7227c',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
+
 end)
