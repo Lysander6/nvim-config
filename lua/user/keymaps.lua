@@ -49,6 +49,7 @@ vim.keymap.set('n', '<Leader>pf', '<cmd>Telescope find_files<CR>', { desc = 'Pro
 -- searching
 vim.keymap.set('n', '<Leader>ss', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { desc = 'Swoop buffer' })
 vim.keymap.set('n', '<Leader>sp', '<cmd>Telescope live_grep<CR>', { desc = 'Search in project' })
+vim.keymap.set('v', '<Leader>sp', '<cmd>Telescope grep_string<CR>', { desc = 'Search in project' }) -- note: it ignores selected text
 
 -- git
 vim.keymap.set('n', '<Leader>gs', '<cmd>Neogit<CR>', { desc = 'Status' })
@@ -69,3 +70,6 @@ vim.keymap.set('n', '<Leader>pt', '<cmd>NvimTreeFindFileToggle!<CR>', { desc = '
 
 -- toggles
 vim.keymap.set('n', '<Leader>Ts', '<cmd>set spell!<CR>', { desc = 'Spell checking' })
+
+-- help
+vim.keymap.set('n', '<Leader>hh', '<cmd>Telescope help_tags<CR>', { desc = 'Search help' })
