@@ -90,6 +90,12 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'nvim-telescope/telescope-ui-select.nvim',
+    commit = '62ea5e58c7bbe191297b983a9e7e89420f581369',
+    requires = { 'nvim-telescope/telescope.nvim' }
+  }
+
+  use {
     'lewis6991/impatient.nvim',
     commit = '9f7eed8133d62457f7ad2ca250eb9b837a4adeb7'
   }

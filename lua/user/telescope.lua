@@ -6,6 +6,12 @@ end
 telescope.setup {
   defaults = require('telescope.themes').get_ivy({
     preview = false
-  })
+  }),
+  extensions = {
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown {}
+    }
+  }
 }
 
+telescope.load_extension('ui-select')
