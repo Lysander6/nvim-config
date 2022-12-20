@@ -65,6 +65,9 @@ vim.keymap.set('n', '<LocalLeader>==', '<cmd>lua vim.lsp.buf.format()<CR>', { de
 -- misc formatting
 vim.keymap.set('n', '<M-q>', 'gww', { desc = 'Wrap lines' })
 vim.keymap.set('v', '<M-q>', 'gw', { desc = 'Wrap lines' })
+-- Seemingly you can't bind to `;`, so we are stuck with `gcc` in normal and
+-- `gc` in visual mode
+-- vim.keymap.set('n', '<Leader>;;', 'gcc', { desc = 'Comment line' })
 
 -- tree
 vim.keymap.set('n', '<Leader>pt', '<cmd>NvimTreeFindFileToggle!<CR>', { desc = 'File tree' })

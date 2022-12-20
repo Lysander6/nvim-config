@@ -173,4 +173,9 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
+  use {
+    'numToStr/Comment.nvim',
+    commit = '5f01c1a89adafc52bf34e3bf690f80d9d726715d'
+  }
+
 end)
