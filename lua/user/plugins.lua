@@ -54,11 +54,7 @@ return require('packer').startup(function(use)
 
   use {
     'folke/which-key.nvim',
-    commit = '61553aeb3d5ca8c11eea8be6eadf478062982ac9',
-    config = function()
-      require('which-key').setup {
-      }
-    end
+    commit = '61553aeb3d5ca8c11eea8be6eadf478062982ac9'
   }
 
   use {
