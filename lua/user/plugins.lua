@@ -18,6 +18,11 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'rebelot/kanagawa.nvim',
+    commit = 'fb733c1043a462155b52cd97efd920f1dd72d33a'
+  }
+
+  use {
     'nvim-lualine/lualine.nvim',
     commit = 'bfa0d99ba6f98d077dd91779841f1c88b7b5c165',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
