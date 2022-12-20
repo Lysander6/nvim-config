@@ -41,6 +41,7 @@ vim.keymap.set('n', '<Leader><Tab>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
 
 -- files
 vim.keymap.set('n', '<Leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Recent files' })
+vim.keymap.set('n', '<Leader>el', '<cmd>TroubleToggle<CR>', { desc = 'List problems' })
 
 -- projects
 vim.keymap.set('n', '<Leader>pp', '<cmd>Telescope projects<CR>', { desc = 'Recent projects' })

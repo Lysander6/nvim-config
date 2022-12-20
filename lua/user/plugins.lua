@@ -20,36 +20,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     commit = 'bfa0d99ba6f98d077dd91779841f1c88b7b5c165',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function()
-      require('lualine').setup {
-        options = {
-          component_separators = '',
-          section_separators = '',
-        },
-        sections = {
-          lualine_a = { 'mode' },
-          lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
-          lualine_x = {
-            'encoding',
-            { 'fileformat', symbols = { unix = 'unix', dos = 'dos', mac = 'mac' } },
-            'filetype'
-          },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' }
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = { 'filename' },
-          lualine_x = { 'location' },
-          lualine_y = {},
-          lualine_z = {}
-        },
-        extensions = { 'nvim-tree' }
-      }
-    end
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   use {
@@ -194,6 +165,12 @@ return require('packer').startup(function(use)
     'TimUntersberger/neogit',
     commit = '0d6002c6af432343937283fb70791fc76fa7227c',
     requires = { 'nvim-lua/plenary.nvim' }
+  }
+
+  use {
+    'folke/trouble.nvim',
+    commit = '897542f90050c3230856bc6e45de58b94c700bbf',
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
 end)
