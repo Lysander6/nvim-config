@@ -50,7 +50,7 @@ vim.keymap.set('n', '<Leader>ss', '<cmd>Telescope current_buffer_fuzzy_find<CR>'
 vim.keymap.set('n', '<Leader>sp', '<cmd>Telescope live_grep<CR>', { desc = 'Search in project' })
 
 -- git
-vim.keymap.set('n', '<Leader>gs', '<cmd>Neogit kind=vsplit<CR>', { desc = 'Status' })
+vim.keymap.set('n', '<Leader>gs', '<cmd>Neogit<CR>', { desc = 'Status' })
 vim.keymap.set('n', '<Leader>gS', '<cmd>Gitsigns stage_hunk<CR>', { desc = 'Stage hunk' })
 vim.keymap.set('v', '<Leader>gS', '<esc><cmd>\'<,\'>Gitsigns stage_hunk<CR>gv', { desc = 'Stage hunk' })
 vim.keymap.set('n', '<Leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { desc = 'Undo stage hunk' })
