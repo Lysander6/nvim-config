@@ -28,26 +28,26 @@ return require('packer').startup(function(use)
           section_separators = '',
         },
         sections = {
-          lualine_a = {'mode'},
-          lualine_b = {'branch', 'diff', 'diagnostics'},
-          lualine_c = {'filename'},
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = { 'filename' },
           lualine_x = {
             'encoding',
             { 'fileformat', symbols = { unix = 'unix', dos = 'dos', mac = 'mac' } },
             'filetype'
           },
-          lualine_y = {'progress'},
-          lualine_z = {'location'}
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' }
         },
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = {'filename'},
-          lualine_x = {'location'},
+          lualine_c = { 'filename' },
+          lualine_x = { 'location' },
           lualine_y = {},
           lualine_z = {}
         },
-        extensions = {'nvim-tree'}
+        extensions = { 'nvim-tree' }
       }
     end
   }
@@ -103,7 +103,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     commit = 'cabf991b1d3996fa6f3232327fc649bbdf676496',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   use {
