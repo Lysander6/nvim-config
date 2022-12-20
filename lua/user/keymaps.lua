@@ -66,3 +66,6 @@ vim.keymap.set('v', '<M-q>', 'gw', { desc = 'Wrap lines' })
 
 -- tree
 vim.keymap.set('n', '<Leader>pt', '<cmd>NvimTreeFindFileToggle!<CR>', { desc = 'File tree' })
+
+-- toggles
+vim.keymap.set('n', '<Leader>Ts', '<cmd>set spell!<CR>', { desc = 'Spell checking' })
