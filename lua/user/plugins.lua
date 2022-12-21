@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
     requires = { 'williamboman/mason.nvim' },
     config = function()
       require('mason-lspconfig').setup {
-        ensure_installed = { 'rust_analyzer', 'sumneko_lua' }
+        ensure_installed = { 'sumneko_lua' }
       }
     end
   }
@@ -70,6 +70,12 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     commit = '973aa14d0992df82ff82f714d978a3eb8d676600',
     requires = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
+  }
+
+  use {
+    'simrat39/rust-tools.nvim',
+    commit = '99fd1238c6068d0637df30b6cee9a264334015e9',
+    requires = { 'neovim/nvim-lspconfig' }
   }
 
   use {
