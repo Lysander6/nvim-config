@@ -10,6 +10,9 @@ treesitter.setup {
     'lua',
     'markdown',
     'markdown_inline',
+  },
+  highlight = {
+    enable = true
   }
 }
 
