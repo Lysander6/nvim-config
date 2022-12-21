@@ -12,3 +12,18 @@ treesitter.setup {
     'markdown_inline',
   }
 }
+
+-- jqtpl dev stuff
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.jqtpl = {
+  install_info = {
+    url = '~/projects/tree-sitter-jqtpl',
+    files = { 'src/parser.c' }
+  }
+}
+
+vim.filetype.add({
+  extension = {
+    jqtpl = 'jqtpl'
+  }
+})
