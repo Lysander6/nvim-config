@@ -10,6 +10,8 @@ end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+-- TODO: somehow merge these with `mason` config
+
 lspconfig.rust_analyzer.setup {
   capabilities = capabilities
 }
@@ -23,4 +25,8 @@ lspconfig.sumneko_lua.setup {
       }
     }
   }
+}
+
+lspconfig.tsserver.setup {
+  capabilities = capabilities
 }

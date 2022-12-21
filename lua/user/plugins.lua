@@ -44,27 +44,19 @@ return require('packer').startup(function(use)
 
   use {
     'williamboman/mason.nvim',
-    commit = 'a1af30116e1bfbd3aa8048b396c324373415958f',
-    config = function()
-      require('mason').setup()
-    end
+    commit = 'a1af30116e1bfbd3aa8048b396c324373415958f'
   }
 
   use {
     'williamboman/mason-lspconfig.nvim',
     commit = 'e8bd50153b94cc5bbfe3f59fc10ec7c4902dd526',
-    requires = { 'williamboman/mason.nvim' },
-    config = function()
-      require('mason-lspconfig').setup {
-        ensure_installed = { 'sumneko_lua' }
-      }
-    end
+    requires = { 'williamboman/mason.nvim' }
   }
 
   use {
     'neovim/nvim-lspconfig',
     commit = '973aa14d0992df82ff82f714d978a3eb8d676600',
-    requires = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
+    requires = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' }
   }
 
   use {
