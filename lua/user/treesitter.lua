@@ -5,9 +5,10 @@ end
 
 treesitter.setup {
   ensure_installed = {
+    'html',
+    'javascript',
     'lua',
     'markdown',
     'markdown_inline',
-    'javascript'
   }
 }
