@@ -1,3 +1,4 @@
+-- windows
 vim.keymap.set('n', '<Leader>1', '<cmd>1wincmd w<CR>', { desc = 'Switch to window 1' })
 vim.keymap.set('n', '<Leader>2', '<cmd>2wincmd w<CR>', { desc = 'Switch to window 2' })
 vim.keymap.set('n', '<Leader>3', '<cmd>3wincmd w<CR>', { desc = 'Switch to window 3' })
@@ -17,6 +18,11 @@ vim.keymap.set('n', '<Leader>wv', '<cmd>vsplit<CR>', { desc = 'Split vertically'
 vim.keymap.set('n', '<Leader>wV', '<cmd>vsplit<CR><C-w>l', { desc = 'Split vertically and switch' })
 
 vim.keymap.set('n', '<Leader>wd', '<cmd>close<CR>', { desc = 'Close window' })
+
+vim.keymap.set('n', '<Leader>wh', '<C-w>h', { desc = 'Move to left window' })
+vim.keymap.set('n', '<Leader>wl', '<C-w>l', { desc = 'Move to right window' })
+vim.keymap.set('n', '<Leader>wk', '<C-w>k', { desc = 'Move to top window' })
+vim.keymap.set('n', '<Leader>wj', '<C-w>j', { desc = 'Move to bottom window' })
 
 -- not the greatest window resizing
 vim.keymap.set('n', '<A-j>', '<cmd>resize +2<CR>')
