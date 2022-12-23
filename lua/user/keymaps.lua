@@ -68,6 +68,7 @@ vim.keymap.set('n', '<Leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { desc = 
 vim.keymap.set('n', '<LocalLeader>aa', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code actions' })
 vim.keymap.set('n', '<LocalLeader>==', '<cmd>lua vim.lsp.buf.format()<CR>', { desc = 'Format buffer' })
 vim.keymap.set('n', '<LocalLeader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>', { desc = 'Rename symbol' })
+vim.keymap.set('n', '<LocalLeader>gg', '<cmd>lua vim.lsp.buf.definition()<CR>', { desc = 'Go to definition' })
 
 -- misc formatting
 vim.keymap.set('n', '<M-q>', 'gww', { desc = 'Wrap lines' })
