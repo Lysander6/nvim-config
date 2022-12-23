@@ -43,6 +43,12 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'nvim-treesitter/playground',
+    commit = '3421bbbfec25a7c54ee041ffb9cb226b69b2b995',
+    requires = { 'nvim-treesitter/nvim-treesitter' }
+  }
+
+  use {
     'williamboman/mason.nvim',
     commit = 'a1af30116e1bfbd3aa8048b396c324373415958f'
   }

@@ -7,11 +7,15 @@ treesitter.setup {
   ensure_installed = {
     'html',
     'javascript',
+    'query', -- for `nvim-treesitter/playground`
     'lua',
     'markdown',
     'markdown_inline',
   },
   highlight = {
+    enable = true
+  },
+  playground = {
     enable = true
   }
 }
