@@ -193,4 +193,9 @@ return require('packer').startup(function(use)
     commit = '30ddc057f71287c3ac2beca876e7ae6d5abe26a0'
   }
 
+  use {
+    'tpope/vim-surround',
+    commit = '3d188ed2113431cf8dac77be61b842acb64433d9'
+  }
+
 end)
