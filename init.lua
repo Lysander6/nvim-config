@@ -1,6 +1,7 @@
 require 'user.impatient'
 require 'user.options'
 require 'user.keymaps'
+require 'user.autocommands'
 require 'user.comment'
 require 'user.lualine'
 require 'user.plugins'
