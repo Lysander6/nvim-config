@@ -1,5 +1,15 @@
-local status_ok, lspconfig = pcall(require, 'lspconfig')
+local status_ok, mason = pcall(require, 'mason')
 if not status_ok then
+  return
+end
+
+local mason_lsp_status_ok, mason_lsp = pcall(require, 'mason-lspconfig')
+if not mason_lsp_status_ok then
+  return
+end
+
+local status_ok_lsp_config, lspconfig = pcall(require, 'lspconfig')
+if not status_ok_lsp_config then
   return
 end
 
@@ -8,25 +18,37 @@ if not cmp_nvim_lsp_status_ok then
   return
 end
 
+mason.setup()
+mason_lsp.setup {
+  ensure_installed = { 'sumneko_lua', 'tsserver' }
+}
+
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
--- TODO: somehow merge these with `mason` config
+mason_lsp.setup_handlers {
+  function(server_name) -- default handler
+    lspconfig[server_name].setup {
+      capabilities = capabilities
+    }
+  end,
+  ['rust_analyzer'] = function()
+    local status_ok_rust_tools, rust_tools = pcall(require, 'rust-tools')
+    if not status_ok_rust_tools then
+      return
+    end
 
-lspconfig.rust_analyzer.setup {
-  capabilities = capabilities
-}
-
-lspconfig.sumneko_lua.setup {
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
+    rust_tools.setup {}
+  end,
+  ['sumneko_lua'] = function()
+    lspconfig.sumneko_lua.setup {
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' }
+          }
+        }
       }
     }
-  }
-}
-
-lspconfig.tsserver.setup {
-  capabilities = capabilities
+  end,
 }
