@@ -198,4 +198,9 @@ return require('packer').startup(function(use)
     commit = '3d188ed2113431cf8dac77be61b842acb64433d9'
   }
 
+  use {
+    'https://git.sr.ht/~p00f/nvim-ts-rainbow',
+    commit = 'fad8badcd9baa4deb2cf2a5376ab412a1ba41797'
+  }
+
 end)

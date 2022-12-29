@@ -5,6 +5,7 @@ end
 
 treesitter.setup {
   ensure_installed = {
+    'clojure',
     'html',
     'javascript',
     'query', -- for `nvim-treesitter/playground`
@@ -17,6 +18,10 @@ treesitter.setup {
   },
   playground = {
     enable = true
+  },
+  rainbow = { -- nvim-ts-rainbow
+    enable = true,
+    extended_mode = true
   }
 }
 
