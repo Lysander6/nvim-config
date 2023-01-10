@@ -1,19 +1,17 @@
-require 'user.impatient'
-require 'user.options'
-require 'user.keymaps'
-require 'user.autocommands'
-require 'user.comment'
-require 'user.lualine'
-require 'user.plugins'
-require 'user.colorscheme'
-require 'user.gitsigns'
-require 'user.neogit'
-require 'user.nvim-autopairs'
-require 'user.nvim-cmp'
-require 'user.nvim-lspconfig'
-require 'user.nvim-tree'
-require 'user.telescope'
-require 'user.treesitter'
-require 'user.trouble'
-require 'user.null-ls'
-require 'user.which-key'
+vim.o.breakindent = true
+vim.o.copyindent = true
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+vim.o.expandtab = true
+vim.o.ignorecase = true
+vim.o.list = true
+vim.o.matchpairs = "(:),{:},[:],<:>,=:;"
+vim.o.matchtime = 5
+vim.o.number = true
+vim.o.scrolloff = 4
+vim.o.shiftwidth = 2
+vim.o.showmatch = true
+vim.o.smartcase = true
+vim.o.spell = true
+vim.o.spelllang = "en_gb"
+
