@@ -18,5 +18,7 @@ vim.o.spelloptions = "camel"
 vim.o.termguicolors = true
 vim.o.whichwrap = "b,s,h,l,<,>,[,]"
 
+vim.cmd.colorscheme("habamax")
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
