@@ -15,4 +15,8 @@ vim.o.smartcase = true
 vim.o.spell = true
 vim.o.spelllang = "en_gb"
 vim.o.spelloptions = "camel"
+vim.o.termguicolors = true
 vim.o.whichwrap = "b,s,h,l,<,>,[,]"
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
