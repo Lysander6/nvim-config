@@ -14,4 +14,5 @@ vim.o.showmatch = true
 vim.o.smartcase = true
 vim.o.spell = true
 vim.o.spelllang = "en_gb"
-
+vim.o.spelloptions = "camel"
+vim.o.whichwrap = "b,s,h,l,<,>,[,]"
