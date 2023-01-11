@@ -51,9 +51,18 @@ require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   use({
-    "rebelot/kanagawa.nvim",
+    "folke/tokyonight.nvim",
     config = function()
-      vim.cmd.colorscheme("kanagawa")
+      require("tokyonight").setup({
+        on_colors = function(c)
+          c.gitSigns.add = c.green
+          c.gitSigns.change = c.orange
+        end,
+        on_highlights = function(hl, c)
+          hl.CursorLineNr.fg = c.orange
+        end,
+      })
+      vim.cmd.colorscheme("tokyonight-night")
     end,
   })
 
