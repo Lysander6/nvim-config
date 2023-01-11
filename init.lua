@@ -109,6 +109,38 @@ require("packer").startup(function(use)
     end
   })
 
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("lualine").setup({
+        options = {
+          component_separators = "",
+          section_separators = "",
+          disabled_filetypes = {
+            "Trouble",
+          },
+          theme = "auto",
+        },
+        sections = {
+          lualine_a = {
+            {
+              "mode",
+              fmt = function(str)
+                return str:sub(1, 1)
+              end,
+            },
+          },
+          lualine_b = {},
+          lualine_c = {"branch", "diff", "diagnostics", "searchcount", "filename"},
+          lualine_x = {"filetype", "progress", "location"},
+          lualine_y = {},
+          lualine_z = {},
+        },
+      })
+    end
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
