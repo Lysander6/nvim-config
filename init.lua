@@ -16,6 +16,7 @@ vim.o.spell = true
 vim.o.spelllang = "en_gb"
 vim.o.spelloptions = "camel"
 vim.o.termguicolors = true
+vim.o.timeoutlen = 300
 vim.o.whichwrap = "b,s,h,l,<,>,[,]"
 
 vim.g.mapleader = " "
@@ -145,6 +146,65 @@ require("packer").startup(function(use)
         },
       })
     end
+  })
+
+  use({
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  })
+
+  use({
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup({
+        plugins = {
+          spelling = {
+            enabled = true,
+          },
+        },
+        window = {
+          margin = { 1, 0, 1, 0 },
+          padding = { 1, 0, 1, 0 },
+        },
+      })
+    end,
+  })
+
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      local default_pickers_opts = {
+        theme = "ivy"
+      }
+
+      require("telescope").setup({
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-h>"] = "which_key",
+            },
+          },
+        },
+        pickers = {
+          buffers = default_pickers_opts,
+          find_files = default_pickers_opts,
+          grep_string = default_pickers_opts,
+          live_grep = default_pickers_opts,
+        },
+      })
+
+      local builtin = require("telescope.builtin")
+
+      vim.keymap.set('n', '<Leader>bb', builtin.buffers)
+      vim.keymap.set('n', '<Leader>ff', builtin.find_files)
+      vim.keymap.set('n', '<Leader>sp', builtin.grep_string)
+      vim.keymap.set('n', '<Leader>fh', builtin.help_tags)
+      vim.keymap.set('n', '<Leader>ss', builtin.live_grep)
+      vim.keymap.set('n', '<Leader>fr', builtin.oldfiles)
+    end,
   })
 
   if packer_bootstrap then
