@@ -207,6 +207,44 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "williamboman/mason-lspconfig.nvim",
+    requires = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    config = function()
+      local mason = require("mason")
+      local lspconfig = require("lspconfig")
+      local mason_lspconfig = require("mason-lspconfig")
+
+      mason.setup()
+
+      mason_lspconfig.setup({
+        ensure_installed = {
+          "sumneko_lua",
+        },
+      })
+
+      mason_lspconfig.setup_handlers({
+        function(server_name)
+          lspconfig[server_name].setup({})
+        end,
+        ["sumneko_lua"] = function()
+          lspconfig.sumneko_lua.setup {
+            settings = {
+              Lua = {
+                diagnostics = {
+                  globals = {"vim"}
+                }
+              }
+            }
+          }
+        end,
+      })
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
