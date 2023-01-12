@@ -245,6 +245,20 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+
+      -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.diagnostics.eslint,
+        },
+      })
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
