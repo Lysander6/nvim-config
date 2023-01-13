@@ -360,6 +360,14 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "moll/vim-bbye",
+    config = function()
+      vim.keymap.set("n", "<Leader>bd", "<cmd>Bdelete<CR>", { desc = "Delete buffer" })
+      vim.keymap.set("n", "<Leader><Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
