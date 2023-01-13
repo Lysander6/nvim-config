@@ -207,6 +207,7 @@ require("packer").startup(function(use)
 
       vim.keymap.set('n', '<Leader>bb', builtin.buffers)
       vim.keymap.set('n', '<Leader>ff', builtin.find_files)
+      vim.keymap.set('n', '<Leader>pf', builtin.find_files)
       vim.keymap.set('n', '<Leader>sp', builtin.grep_string)
       vim.keymap.set('n', '<Leader>fh', builtin.help_tags)
       vim.keymap.set('n', '<Leader>ss', builtin.live_grep)
