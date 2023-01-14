@@ -59,6 +59,7 @@ require("packer").startup(function(use)
 
   use({
     "numToStr/Comment.nvim",
+    keys = { "gc" },
     config = function()
       require("Comment").setup()
     end,
@@ -114,6 +115,7 @@ require("packer").startup(function(use)
 
   use({
     "moll/vim-bbye",
+    keys = { "<Leader>bd", "<Leader><Tab>" },
     config = function()
       vim.keymap.set("n", "<Leader>bd", "<cmd>Bdelete<CR>", { desc = "Delete buffer" })
       vim.keymap.set("n", "<Leader><Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
