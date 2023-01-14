@@ -64,22 +64,22 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup({
-        plugins = {
-          spelling = {
-            enabled = true,
-          },
-        },
-        window = {
-          margin = { 1, 0, 1, 0 },
-          padding = { 1, 0, 1, 0 },
-        },
-      })
-    end,
-  })
+  -- use({
+  --   "folke/which-key.nvim",
+  --   config = function()
+  --     require("which-key").setup({
+  --       plugins = {
+  --         spelling = {
+  --           enabled = true,
+  --         },
+  --       },
+  --       window = {
+  --         margin = { 1, 0, 1, 0 },
+  --         padding = { 1, 0, 1, 0 },
+  --       },
+  --     })
+  --   end,
+  -- })
 
   use({
     "nvim-telescope/telescope.nvim",
