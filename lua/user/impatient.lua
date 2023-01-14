@@ -4,4 +4,4 @@ if not has_impatient then
   return
 end
 
-impatient.enable_profile()
+-- impatient.enable_profile()
