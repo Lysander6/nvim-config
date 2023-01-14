@@ -132,6 +132,25 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  })
+
+  use({
+    "nvim-treesitter/playground",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    cmd = { "TSPlaygroundToggle" },
+  })
+
+  use({
+    "https://git.sr.ht/~p00f/nvim-ts-rainbow",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
