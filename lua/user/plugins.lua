@@ -124,6 +124,14 @@ require("packer").startup(function(use)
 
   use("lewis6991/impatient.nvim")
 
+  use({
+    "ggandor/leap.nvim",
+    keys = { "g", "s" },
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
