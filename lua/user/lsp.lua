@@ -30,6 +30,11 @@ mason_lspconfig.setup_handlers({
       capabilities = capabilities,
     })
   end,
+  ["rust_analyzer"] = function()
+    lspconfig.rust_analyzer.setup({
+      capabilities = capabilities,
+    })
+  end,
   ["sumneko_lua"] = function()
     lspconfig.sumneko_lua.setup({
       capabilities = capabilities,
