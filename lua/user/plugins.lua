@@ -126,7 +126,7 @@ require("packer").startup(function(use)
 
   use({
     "ggandor/leap.nvim",
-    keys = { "g", "s" },
+    keys = { "g", "s", "S" },
     config = function()
       require("leap").add_default_mappings()
     end,
