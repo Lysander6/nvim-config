@@ -33,7 +33,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.termguicolors = true
 vim.o.timeoutlen = 300
-vim.o.whichwrap = "b,s,h,l,<,>,[,]"
+vim.o.whichwrap = "b,s,<,>,[,]"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
