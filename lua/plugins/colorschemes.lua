@@ -21,6 +21,7 @@ return {
         cmp = true,
         leap = true,
         neogit = true,
+        neotree = true,
         telescope = {
           enabled = true,
         },
