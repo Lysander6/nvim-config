@@ -5,7 +5,21 @@ return {
       "nvim-lua/plenary.nvim",
     },
     lazy = true,
-    config = true,
+    opts = {
+      disable_context_highlighting = true,
+      disable_hint = true,
+      signs = {
+        hunk = { "", "" },
+        item = { "", "" },
+        section = { "", "" },
+      },
+      mappings = {
+        popup = {
+          ["F"] = "PullPopup",
+          ["p"] = "PushPopup",
+        },
+      },
+    },
     keys = {
       {
         "<leader>gs",
