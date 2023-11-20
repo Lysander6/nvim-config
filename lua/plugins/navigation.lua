@@ -7,7 +7,13 @@ return {
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    opts = {},
+    opts = {
+      window = {
+        mappings = {
+          ["<tab>"] = "open",
+        },
+      },
+    },
     cmd = "Neotree",
     keys = {
       {
