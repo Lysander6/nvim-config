@@ -55,6 +55,7 @@ return {
         selection_caret = " ",
         mappings = {
           i = {
+            ["<esc>"] = "close",
             ["<C-j>"] = "move_selection_next",
             ["<C-k>"] = "move_selection_previous",
           },
@@ -64,6 +65,7 @@ return {
         require("telescope.themes").get_cursor({
           mappings = {
             i = {
+              ["<esc>"] = "close",
               ["<C-j>"] = "move_selection_next",
               ["<C-k>"] = "move_selection_previous",
             },
