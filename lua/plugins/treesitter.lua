@@ -10,6 +10,7 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         version = false,
       },
+      "windwp/nvim-ts-autotag",
     },
     cmd = { "TSInstall", "TSUpdate", "TSUpdateSync" },
     opts = {
@@ -30,6 +31,9 @@ return {
         "vim",
         "vimdoc",
         "yaml",
+      },
+      autotag = {
+        enable = true,
       },
       highlight = {
         enable = true,
