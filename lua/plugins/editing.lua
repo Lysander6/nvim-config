@@ -29,9 +29,8 @@ return {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
       },
-      {
-        "nvim-tree/nvim-web-devicons",
-      },
+      "nvim-tree/nvim-web-devicons",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     opts = {
       color_devicons = true,
@@ -54,10 +53,27 @@ return {
       opts.defaults = require("telescope.themes").get_ivy({
         prompt_prefix = " ",
         selection_caret = " ",
+        mappings = {
+          i = {
+            ["<C-j>"] = "move_selection_next",
+            ["<C-k>"] = "move_selection_previous",
+          },
+        },
       })
+      opts.extensions["ui-select"] = {
+        require("telescope.themes").get_cursor({
+          mappings = {
+            i = {
+              ["<C-j>"] = "move_selection_next",
+              ["<C-k>"] = "move_selection_previous",
+            },
+          },
+        }),
+      }
       telescope.setup(opts)
 
       telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
     end,
     keys = {
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
