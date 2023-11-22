@@ -91,4 +91,24 @@ return {
       { "z=", "<cmd>Telescope spell_suggest<cr>", desc = "Spelling" },
     },
   },
+  {
+    "folke/trouble.nvim",
+    lazy = true,
+    cmd = { "TroubleToggle", "Trouble" },
+    opts = {
+      use_diagnostic_signs = true,
+    },
+    keys = {
+      {
+        "<leader>el",
+        "<cmd>TroubleToggle document_diagnostics<cr>",
+        desc = "Document diagnostics",
+      },
+      {
+        "<leader>pe",
+        "<cmd>TroubleToggle workspace_diagnostics<cr>",
+        desc = "Workspace diagnostics",
+      },
+    },
+  },
 }
