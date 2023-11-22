@@ -44,7 +44,7 @@ map("n", "<leader>tp", "<cmd>set paste!<cr>")
 -- toggle highlight search
 map("n", "<leader>sc", "<cmd>set hlsearch!<cr>")
 -- toggle quickfix list
-map("n", "<leader>el", "<cmd>copen<cr>")
+-- map("n", "<leader>el", "<cmd>copen<cr>")
 
 -- lsp
 map("n", "gd", function()
