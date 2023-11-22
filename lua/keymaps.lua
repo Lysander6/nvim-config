@@ -32,7 +32,7 @@ map("n", "<leader>w2", "<cmd>wincmd 2<cr>")
 map("n", "<leader><tab>", "<cmd>e #<cr>")
 map("n", "[b", "<cmd>bprevious<cr>")
 map("n", "]b", "<cmd>bnext<cr>")
-map("n", "<leader>bd", "<cmd>bd<cr>")
+-- map("n", "<leader>bd", "<cmd>bd<cr>")
 
 -- toggles
 -- toggle spellcheck
