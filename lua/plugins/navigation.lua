@@ -8,6 +8,9 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
+      filesystem = {
+        hijack_netrw_behavior = "open_current",
+      },
       window = {
         mappings = {
           ["<tab>"] = "open",
@@ -23,6 +26,13 @@ return {
         desc = "Toggle NeoTree",
       },
     },
+    init = function()
+      if vim.fn.argc(-1) == 1 then
+        if vim.fn.isdirectory(vim.fn.expand("%")) == 1 then
+          require("neo-tree")
+        end
+      end
+    end,
   },
   {
     "echasnovski/mini.bufremove",
