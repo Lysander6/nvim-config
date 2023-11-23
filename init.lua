@@ -25,6 +25,7 @@ vim.o.number = true
 vim.o.scrolloff = 4
 vim.o.shiftwidth = 2
 vim.o.showmatch = true
+vim.o.signcolumn = "yes"
 vim.o.smartcase = true
 vim.o.spell = true
 vim.o.spelllang = "en_gb"
