@@ -47,6 +47,15 @@ return {
       require("lspconfig").tsserver.setup({
         capabilities = capabilities,
       })
+      require("lspconfig").eslint.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+      })
 
       -- define custom lsp diagnostic signs
       vim.fn.sign_define("DiagnosticSignError", {
@@ -82,6 +91,7 @@ return {
     },
     opts = {
       ensure_installed = {
+        "eslint",
         "lua_ls",
       },
     },
