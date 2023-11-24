@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.o.breakindent = true
+vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.copyindent = true
 vim.o.cursorline = true
@@ -23,6 +24,7 @@ vim.o.matchpairs = "(:),{:},[:],<:>,=:;"
 vim.o.matchtime = 5
 vim.o.number = true
 vim.o.scrolloff = 4
+vim.o.shiftround = true
 vim.o.shiftwidth = 2
 vim.o.showmatch = true
 vim.o.signcolumn = "yes"
@@ -34,6 +36,8 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.termguicolors = true
 vim.o.timeoutlen = 300
+vim.o.updatetime = 300
+vim.o.virtualedit = "block"
 vim.o.whichwrap = "b,s,<,>,[,]"
 
 vim.g.mapleader = " "
