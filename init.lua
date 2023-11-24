@@ -48,3 +48,4 @@ vim.g.netrw_banner = 0
 
 require("lazy").setup("plugins")
 require("keymaps")
+require("autocmds")
