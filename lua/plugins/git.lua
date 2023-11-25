@@ -29,4 +29,10 @@ return {
       },
     },
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    lazy = true,
+    event = { "BufRead", "BufNewFile" },
+    config = true,
+  },
 }

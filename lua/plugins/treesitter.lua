@@ -23,6 +23,7 @@ return {
         "lua",
         "python",
         "query",
+        "regex",
         "rust",
         "scss",
         "sql",

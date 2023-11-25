@@ -46,6 +46,9 @@ return {
         spell_suggest = {
           theme = "cursor",
         },
+        buffers = {
+          path_display = { "smart" },
+        },
       },
     },
     config = function(_, opts)
@@ -60,6 +63,11 @@ return {
             ["<C-k>"] = "move_selection_previous",
           },
         },
+        -- Format path as "file.txt (path\to\file\)"
+        path_display = function(opts, path)
+          local tail = require("telescope.utils").path_tail(path)
+          return string.format("%s (%s)", tail, path)
+        end,
       })
       opts.extensions["ui-select"] = {
         require("telescope.themes").get_cursor({

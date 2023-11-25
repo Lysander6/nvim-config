@@ -19,12 +19,18 @@ return {
       },
       integrations = {
         cmp = true,
+        gitsigns = true,
         leap = true,
+        lsp_trouble = true,
+        mason = true,
         neogit = true,
         neotree = true,
+        noice = true,
         telescope = {
           enabled = true,
         },
+        treesitter = true,
+        treesitter_context = true,
       },
       styles = {
         comments = {},
