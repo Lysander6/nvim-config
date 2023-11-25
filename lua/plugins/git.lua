@@ -33,6 +33,18 @@ return {
     "lewis6991/gitsigns.nvim",
     lazy = true,
     event = { "BufRead", "BufNewFile" },
-    config = true,
+    config = {
+      current_line_blame_opts = {
+        delay = 300,
+      },
+    },
+    keys = {
+      {
+        "<leader>tgb",
+        "<cmd>lua require('gitsigns').toggle_current_line_blame()<cr>",
+        mode = "n",
+        desc = "Toggle git blame",
+      },
+    },
   },
 }
