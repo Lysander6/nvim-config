@@ -122,10 +122,21 @@ return {
   {
     "numToStr/Comment.nvim",
     lazy = true,
-    event = { "BufRead", "BufNewFile" },
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       "nvim-treesitter/nvim-treesitter",
+    },
+    keys = {
+      {
+        "gc",
+        mode = { "n", "v" },
+        desc = "Comment lines",
+      },
+      {
+        "gb",
+        mode = { "n", "v" },
+        desc = "Comment block",
+      },
     },
     init = function()
       vim.g.skip_ts_context_commentstring_module = true
@@ -137,5 +148,15 @@ return {
 
       require("Comment").setup(opts)
     end,
+  },
+  {
+    "kylechui/nvim-surround",
+    lazy = true,
+    keys = {
+      { "c", mode = { "n", "v", "o" }, desc = "Change surround" },
+      { "d", mode = { "n", "v", "o" }, desc = "Delete surround" },
+      { "y", mode = { "n", "v", "o" }, desc = "Yank surround" },
+    },
+    config = true,
   },
 }
