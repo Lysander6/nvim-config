@@ -8,7 +8,7 @@ map("n", "<leader>ws", "<cmd>split<cr>")
 map("n", "<leader>wv", "<cmd>vsplit<cr>")
 
 -- window closing
-map("n", "<leader>wd", "<cmd>close<cr>")
+map("n", "<leader>wd", "<cmd>close<cr>", { desc = "Delete window" })
 map("n", "<leader>wo", "<cmd>only<cr>")
 
 -- window movement
@@ -22,11 +22,15 @@ map("n", "<leader>wr", "<cmd>wincmd r<cr>")
 
 -- jump to nth window
 for i = 1, 9 do
-  map("n", "<leader>" .. i, "<cmd>" .. i .. " wincmd w<cr>")
+  map(
+    "n",
+    "<leader>" .. i,
+    "<cmd>" .. i .. " wincmd w<cr>",
+    { desc = "Go to window " .. i }
+  )
 end
 
--- go to second window
-map("n", "<leader>w2", "<cmd>wincmd 2<cr>")
+map("n", "<leader>ww", "<cmd>wincmd w<cr>", { desc = "Go to previous window" })
 
 -- buffers
 map("n", "<leader><tab>", "<cmd>e #<cr>")

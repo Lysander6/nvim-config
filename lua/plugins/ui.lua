@@ -10,6 +10,12 @@ return {
       local lualine_require = require("lualine_require")
       lualine_require.require = require
 
+      local window_number = {
+        function()
+          return vim.fn.winnr()
+        end,
+      }
+
       return {
         options = {
           component_separators = "",
@@ -22,12 +28,7 @@ return {
         },
         sections = {
           lualine_a = {
-            {
-              "mode",
-              fmt = function(str)
-                return str:sub(1, 1)
-              end,
-            },
+            window_number,
           },
           lualine_b = {},
           lualine_c = {
@@ -50,7 +51,15 @@ return {
                 end
               end,
             },
-            "diagnostics",
+            {
+              "diagnostics",
+              -- symbols = {
+              --   error = " ",
+              --   warn = " ",
+              --   info = " ",
+              --   hint = " ",
+              -- },
+            },
             "searchcount",
             "filename",
           },
@@ -65,8 +74,29 @@ return {
           lualine_y = {},
           lualine_z = {},
         },
+        inactive_sections = {
+          lualine_c = {
+            window_number,
+            "filename",
+          },
+        },
       }
     end,
+  },
+  {
+    "echasnovski/mini.nvim",
+    lazy = true,
+    version = false,
+    name = "mini.clue",
+    keys = { "<leader>" },
+    opts = {
+      triggers = {
+        { mode = "n", keys = "<leader>" },
+      },
+      window = {
+        delay = 500,
+      },
+    },
   },
   -- {
   --   "folke/noice.nvim",
