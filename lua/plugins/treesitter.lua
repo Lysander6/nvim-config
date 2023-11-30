@@ -16,11 +16,14 @@ return {
     opts = {
       ensure_installed = {
         "astro",
+        "bash",
         "css",
         "html",
         "javascript",
         "json",
         "lua",
+        "markdown",
+        "markdown_inline",
         "python",
         "query",
         "regex",
