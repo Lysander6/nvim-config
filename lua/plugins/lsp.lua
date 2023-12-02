@@ -43,6 +43,19 @@ return {
       })
       require("lspconfig").rust_analyzer.setup({
         capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+              extraArgs = {
+                -- "--all",
+                "--",
+                "-Wclippy::pedantic",
+                "-Wclippy::perf",
+              },
+            },
+          },
+        },
       })
       require("lspconfig").tsserver.setup({
         capabilities = capabilities,
