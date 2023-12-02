@@ -8,6 +8,7 @@ return {
     opts = {
       disable_context_highlighting = true,
       disable_hint = true,
+      graph_style = "unicode",
       signs = {
         hunk = { "", "" },
         item = { "", "" },
@@ -23,7 +24,7 @@ return {
     keys = {
       {
         "<leader>gs",
-        "<cmd>Neogit kind=vsplit<cr>",
+        "<cmd>Neogit kind=tab<cr>",
         mode = "n",
         desc = "Git status",
       },
