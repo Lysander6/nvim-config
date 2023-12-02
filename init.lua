@@ -24,6 +24,8 @@ vim.o.matchpairs = "(:),{:},[:],<:>,=:;"
 vim.o.matchtime = 5
 vim.o.number = true
 vim.o.scrolloff = 4
+vim.o.sessionoptions =
+  "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.o.shiftround = true
 vim.o.shiftwidth = 2
 vim.o.showmatch = true
