@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.o.breakindent = true
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.copyindent = true
 vim.o.cursorline = true
