@@ -116,7 +116,7 @@ return {
           miniclue.gen_clues.marks(),
           miniclue.gen_clues.registers(),
           miniclue.gen_clues.windows(),
-          miniclue.gen_clues.z(),
+          -- miniclue.gen_clues.z(),
         },
         triggers = {
           { mode = "n", keys = "<leader>" },
@@ -128,8 +128,8 @@ return {
           { mode = "x", keys = "`" },
           { mode = "n", keys = '"' },
           { mode = "x", keys = '"' },
-          { mode = "n", keys = "z" },
-          { mode = "x", keys = "z" },
+          -- { mode = "n", keys = "z" },
+          -- { mode = "x", keys = "z" },
         },
         window = {
           delay = 500,
