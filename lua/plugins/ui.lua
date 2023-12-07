@@ -102,19 +102,40 @@ return {
     end,
   },
   {
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.clue",
     lazy = true,
     version = false,
-    name = "mini.clue",
-    keys = { "<leader>" },
-    opts = {
-      triggers = {
-        { mode = "n", keys = "<leader>" },
-      },
-      window = {
-        delay = 500,
-      },
-    },
+    keys = { "<leader>", '"', "'", "`", "g" },
+    config = function()
+      local miniclue = require("mini.clue")
+
+      miniclue.setup({
+        clues = {
+          miniclue.gen_clues.builtin_completion(),
+          miniclue.gen_clues.g(),
+          miniclue.gen_clues.marks(),
+          miniclue.gen_clues.registers(),
+          miniclue.gen_clues.windows(),
+          miniclue.gen_clues.z(),
+        },
+        triggers = {
+          { mode = "n", keys = "<leader>" },
+          { mode = "n", keys = "g" },
+          { mode = "x", keys = "g" },
+          { mode = "n", keys = "'" },
+          { mode = "n", keys = "`" },
+          { mode = "x", keys = "'" },
+          { mode = "x", keys = "`" },
+          { mode = "n", keys = '"' },
+          { mode = "x", keys = '"' },
+          { mode = "n", keys = "z" },
+          { mode = "x", keys = "z" },
+        },
+        window = {
+          delay = 500,
+        },
+      })
+    end,
   },
   -- {
   --   "folke/noice.nvim",
