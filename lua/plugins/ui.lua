@@ -80,6 +80,24 @@ return {
             "filename",
           },
         },
+        -- tabline = {
+        --   lualine_a = {},
+        --   lualine_b = {},
+        --   lualine_c = {
+        --     {
+        --       "tabs",
+        --       max_length = vim.o.columns - 10,
+        --       mode = 2,
+        --       path = 1,
+        --       symbols = {
+        --         modified = " •",
+        --       },
+        --     },
+        --   },
+        --   lualine_x = {},
+        --   lualine_y = {},
+        --   lualine_z = {},
+        -- },
       }
     end,
   },
