@@ -81,6 +81,10 @@ map(
 )
 -- toggle quickfix list
 -- map("n", "<leader>el", "<cmd>copen<cr>")
+-- toggle inlay hints
+map("n", "<leader>ti", function()
+  vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
 
 -- lsp
 map("n", "gd", function()

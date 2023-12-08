@@ -54,8 +54,33 @@ return {
                 "-Wclippy::perf",
               },
             },
+            inlayHints = {
+              maxLength = 120,
+              -- bindingModeHints = {
+              --   enable = true,
+              -- },
+              -- closureCaptureHints = {
+              --   enable = true,
+              -- },
+              closureReturnTypeHints = {
+                enable = true,
+              },
+              lifetimeElisionHints = {
+                enable = true,
+                useParameterNames = true,
+              },
+              implicitDrops = {
+                enable = true,
+              },
+              -- reborrowHints = {
+              --   enable = true,
+              -- },
+            },
           },
         },
+        on_attach = function(client, bufnr)
+          vim.lsp.inlay_hint.enable(bufnr, true) -- seems to not draw hints on first screen
+        end,
       })
       require("lspconfig").tsserver.setup({
         capabilities = capabilities,
