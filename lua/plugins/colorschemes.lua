@@ -19,6 +19,7 @@ return {
       },
       integrations = {
         cmp = true,
+        fidget = true,
         gitsigns = true,
         leap = true,
         lsp_trouble = true,

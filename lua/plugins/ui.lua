@@ -137,6 +137,24 @@ return {
       })
     end,
   },
+  {
+    "j-hui/fidget.nvim",
+    lazy = true,
+    event = { "BufRead", "BufNewFile" },
+    opts = {
+      progress = {
+        display = {
+          progress_icon = {
+            pattern = "dots",
+            period = 1,
+          },
+        },
+      },
+      notification = {
+        override_vim_notify = true,
+      },
+    },
+  },
   -- {
   --   "folke/noice.nvim",
   --   lazy = true,
