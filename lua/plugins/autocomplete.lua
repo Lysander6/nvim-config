@@ -75,6 +75,8 @@ return {
               select = false,
             }),
           }),
+          ["<C-j>"] = cmp.mapping.scroll_docs(4),
+          ["<C-k>"] = cmp.mapping.scroll_docs(-4),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
