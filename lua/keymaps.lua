@@ -86,6 +86,15 @@ map("n", "<leader>ti", function()
   vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
 
+-- toggle lsp diagnostics
+map("n", "<leader>te", function()
+  if vim.diagnostic.is_disabled(0) then
+    vim.diagnostic.enable(0)
+  else
+    vim.diagnostic.disable(0)
+  end
+end, { desc = "Toggle diagnostics" })
+
 -- lsp
 map("n", "gd", function()
   require("telescope.builtin").lsp_definitions({ reuse_win = true })
