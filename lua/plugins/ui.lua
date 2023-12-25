@@ -5,8 +5,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
-      -- TODO: switch back to AndreM222/copilot-lualine
-      { "Lysander6/copilot-lualine", branch = "options-override-fix" },
+      "AndreM222/copilot-lualine",
     },
     opts = function()
       local lualine_require = require("lualine_require")
