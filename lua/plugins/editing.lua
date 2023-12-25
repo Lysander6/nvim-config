@@ -49,6 +49,9 @@ return {
         buffers = {
           path_display = { "smart" },
         },
+        live_grep = {
+          -- additional_args = { "--trim" },
+        },
       },
     },
     config = function(_, opts)
@@ -56,6 +59,7 @@ return {
       opts.defaults = require("telescope.themes").get_ivy({
         prompt_prefix = " ",
         selection_caret = " ",
+        multi_icon = "•",
         mappings = {
           i = {
             ["<esc>"] = "close",
@@ -63,11 +67,21 @@ return {
             ["<C-k>"] = "move_selection_previous",
           },
         },
+        cache_picker = {
+          num_pickers = 20,
+        },
         -- Format path as "file.txt (path\to\file\)"
-        path_display = function(opts, path)
-          local tail = require("telescope.utils").path_tail(path)
-          return string.format("%s (%s)", tail, path)
-        end,
+        -- path_display = function(opts, path)
+        --   local tail = require("telescope.utils").path_tail(path)
+        --   return string.format("%s (%s)", tail, path)
+        -- end,
+        layout_config = {
+          height = 10,
+        },
+        border = false,
+        preview = false, -- NOTE: breaks git related pickers
+        results_title = false,
+        scroll_strategy = "limit",
       })
       opts.extensions["ui-select"] = {
         require("telescope.themes").get_cursor({
@@ -85,6 +99,8 @@ return {
       telescope.load_extension("fzf")
       telescope.load_extension("ui-select")
     end,
+    -- <C-/> - show input map in insert mode
+    -- <C-SPC> - refine search
     keys = {
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
       { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find file" },
@@ -97,6 +113,22 @@ return {
       { "<M-s>r", "<cmd>Telescope live_grep<cr>", desc = "Ripgrep" },
       { "<leader><leader>", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "z=", "<cmd>Telescope spell_suggest<cr>", desc = "Spelling" },
+      { "<leader>hk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+      {
+        "<leader>sl",
+        "<cmd>Telescope resume<cr>",
+        desc = "Resume last search",
+      },
+      {
+        "<leader>sL",
+        "<cmd>Telescope pickers<cr>",
+        desc = "List previous searches",
+      },
+      {
+        "<leader>hh",
+        "<cmd>Telescope help_tags<cr>",
+        desc = "Search help",
+      },
     },
   },
   {
