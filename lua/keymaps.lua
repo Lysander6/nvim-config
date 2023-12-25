@@ -33,12 +33,7 @@ end
 map("n", "<leader>ww", "<cmd>wincmd w<cr>", { desc = "Go to previous window" })
 
 -- buffers
-map(
-  "n",
-  "<leader><tab>",
-  "<cmd>e #<cr>",
-  { desc = "Switch to previous buffer" }
-)
+map("n", "<leader><tab>", "<cmd>b#<cr>", { desc = "Switch to previous buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 -- map("n", "<leader>bd", "<cmd>bd<cr>")

@@ -42,7 +42,7 @@ return {
       {
         "<leader>bd",
         function()
-          local bd = require("mini.bufremove").delete
+          local bd = require("mini.bufremove").wipeout
           if vim.bo.modified then
             local choice = vim.fn.confirm(
               ("Save the changes to %q?"):format(vim.fn.bufname()),
