@@ -52,9 +52,10 @@ return {
           node_decremental = "V",
         },
       },
-      indent = {
-        enable = true,
-      },
+      -- NOTE: breaks indentation of markdown list items
+      -- indent = {
+      --   enable = true,
+      -- },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
