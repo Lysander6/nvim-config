@@ -115,6 +115,35 @@ return {
         text = "",
         texthl = "DiagnosticSignHint",
       })
+
+      -- highlight symbol under cursor
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(ev)
+          if
+            #vim.lsp.get_clients({
+              bufnr = ev.buf,
+              method = "textDocument/documentHighlight",
+            }) == 0
+          then
+            return
+          end
+
+          vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+            buffer = ev.buf,
+            callback = function()
+              vim.lsp.buf.document_highlight()
+            end,
+            desc = "Highlight symbol under cursor",
+          })
+          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+            buffer = ev.buf,
+            callback = function()
+              vim.lsp.buf.clear_references()
+            end,
+            desc = "Clear symbol highlights",
+          })
+        end,
+      })
     end,
   },
   {
