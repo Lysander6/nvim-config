@@ -94,6 +94,9 @@ return {
           })
         end,
       })
+      require("lspconfig").gdscript.setup({
+        capabilities = capabilities,
+      })
 
       -- define custom lsp diagnostic signs
       vim.fn.sign_define("DiagnosticSignError", {
