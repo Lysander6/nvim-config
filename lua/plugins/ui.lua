@@ -5,6 +5,8 @@ return {
     event = "VeryLazy",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
+      -- TODO: switch back to AndreM222/copilot-lualine
+      { "Lysander6/copilot-lualine", branch = "options-override-fix" },
     },
     opts = function()
       local lualine_require = require("lualine_require")
@@ -61,12 +63,34 @@ return {
               -- },
             },
             "searchcount",
-            "filename",
+            {
+              "filename",
+              symbols = {
+                modified = "•",
+                readonly = "",
+              },
+              -- color = function()
+              --   if vim.bo.readonly then
+              --     return { fg = "#fab387" }
+              --   end
+              --   if vim.bo.modified then
+              --     return { fg = "#f9e2af" }
+              --   end
+              -- end,
+            },
           },
           lualine_x = {
             {
-              "filetype",
-              icon_only = true,
+              "copilot",
+              padding = { left = 1, right = 2 },
+              show_colors = true,
+              symbols = {
+                status = {
+                  hl = {
+                    enabled = "#74c7ec",
+                  },
+                },
+              },
             },
             "progress",
             "location",
