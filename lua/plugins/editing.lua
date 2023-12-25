@@ -85,9 +85,6 @@ return {
       })
       opts.extensions["ui-select"] = {
         require("telescope.themes").get_cursor({
-          layout_config = {
-            height = { 0, max = 5 },
-          },
           mappings = {
             i = {
               ["<esc>"] = "close",

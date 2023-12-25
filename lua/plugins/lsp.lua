@@ -107,7 +107,7 @@ return {
         text = "",
         texthl = "DiagnosticSignWarn",
       })
-      vim.fn.sign_define("DisgnosticSignInfo", {
+      vim.fn.sign_define("DiagnosticSignInfo", {
         text = "",
         texthl = "DiagnosticSignInfo",
       })
@@ -134,6 +134,7 @@ return {
       ensure_installed = {
         "eslint",
         "lua_ls",
+        "typos_lsp",
       },
     },
   },
