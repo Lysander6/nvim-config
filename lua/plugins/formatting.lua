@@ -27,13 +27,15 @@ return {
   },
   opts = {
     formatters_by_ft = {
-      lua = { "stylua" },
+      html = { "prettierd", "prettier" },
       javascript = { "prettierd", "prettier" },
       javascriptreact = { "prettierd", "prettier" },
-      typescript = { "prettierd", "prettier" },
-      typescriptreact = { "prettierd", "prettier" },
+      lua = { "stylua" },
+      markdown = { "prettierd", "prettier" },
       rust = { "rustfmt" },
       sql = { "prettierd", "prettier" },
+      typescript = { "prettierd", "prettier" },
+      typescriptreact = { "prettierd", "prettier" },
     },
     format_on_save = function(bufnr)
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
