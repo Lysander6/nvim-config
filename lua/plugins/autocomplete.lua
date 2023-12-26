@@ -129,8 +129,15 @@ return {
       suggestion = { enabled = false },
       panel = { enabled = false },
       filetypes = {
-        markdown = true,
+        -- TODO: to be able to use copilot in neogit commit message buffer we
+        -- also need to somehow set `vim.bo.buflisted` to true. Calling
+        -- `:Copilot panel` lets us check if it works (it does not at the
+        -- moment).
+        NeogitCommitMessage = true,
+        gitcommit = true,
         help = true,
+        markdown = true,
+        -- ["*"] = true,
       },
     },
   },
