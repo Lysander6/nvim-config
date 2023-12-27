@@ -27,15 +27,15 @@ return {
   },
   opts = {
     formatters_by_ft = {
-      html = { "prettierd", "prettier" },
-      javascript = { "prettierd", "prettier" },
-      javascriptreact = { "prettierd", "prettier" },
+      html = { { "prettierd", "prettier" }, "rustywind" },
+      javascript = { { "prettierd", "prettier" }, "rustywind" },
+      javascriptreact = { { "prettierd", "prettier" }, "rustywind" },
       lua = { "stylua" },
-      markdown = { "prettierd", "prettier" },
+      markdown = { { "prettierd", "prettier" } },
       rust = { "rustfmt" },
-      sql = { "prettierd", "prettier" },
-      typescript = { "prettierd", "prettier" },
-      typescriptreact = { "prettierd", "prettier" },
+      sql = { { "prettierd", "prettier" } },
+      typescript = { { "prettierd", "prettier" }, "rustywind" },
+      typescriptreact = { { "prettierd", "prettier" }, "rustywind" },
     },
     format_on_save = function(bufnr)
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
