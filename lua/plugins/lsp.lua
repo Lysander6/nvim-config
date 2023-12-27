@@ -22,6 +22,7 @@ return {
       -- make lua_ls aware of `vim` global
       -- https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
       require("lspconfig").lua_ls.setup({
+        capabilities = capabilities,
         settings = {
           Lua = {
             runtime = {
