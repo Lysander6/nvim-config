@@ -41,5 +41,13 @@ return {
         mode = { "i", "s" },
       },
     },
+    config = function(opts)
+      local luasnip = require("luasnip")
+      luasnip.setup(opts)
+
+      -- add html snippets to jsx and tsx
+      luasnip.filetype_extend("javascriptreact", { "html" })
+      luasnip.filetype_extend("typescriptreact", { "html" })
+    end,
   },
 }
