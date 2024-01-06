@@ -49,7 +49,7 @@ map("n", "<leader>t]", "<cmd>+tabmove<cr>", { desc = "Move tab right" })
 for i = 1, 9 do
   map(
     "n",
-    "<leader>t" .. i,
+    "<M-" .. i .. ">", -- <M-1>, <M-2>, etc.
     "<cmd>" .. i .. "tabnext<cr>",
     { desc = "Go to tab " .. i }
   )
