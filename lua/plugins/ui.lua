@@ -31,9 +31,10 @@ return {
           lualine_a = {
             window_number,
           },
-          lualine_b = {},
-          lualine_c = {
+          lualine_b = {
             "branch",
+          },
+          lualine_c = {
             {
               "diff",
               symbols = {
@@ -64,18 +65,29 @@ return {
             "searchcount",
             {
               "filename",
-              symbols = {
-                modified = "•",
-                readonly = "",
-              },
-              -- color = function()
-              --   if vim.bo.readonly then
-              --     return { fg = "#fab387" }
-              --   end
-              --   if vim.bo.modified then
-              --     return { fg = "#f9e2af" }
-              --   end
-              -- end,
+              file_status = false,
+              path = 1,
+            },
+            {
+              -- coloured file status
+              function()
+                if vim.bo.modified then
+                  return "•"
+                end
+                if vim.bo.readonly then
+                  return ""
+                end
+                return ""
+              end,
+              color = function()
+                if vim.bo.readonly then
+                  return "WarningMsg"
+                end
+                if vim.bo.modified then
+                  return { fg = "#f9e2af" }
+                end
+              end,
+              padding = { left = 0, right = 1 },
             },
           },
           lualine_x = {
@@ -98,29 +110,47 @@ return {
           lualine_z = {},
         },
         inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
           lualine_c = {
             window_number,
-            "filename",
+            -- "branch", -- seems to be kind of broken
+            {
+              "filename",
+              path = 1,
+              symbols = {
+                modified = "•",
+                readonly = "",
+              },
+            },
           },
+          lualine_x = {
+            "location",
+          },
+          lualine_y = {},
+          lualine_z = {},
         },
-        -- tabline = {
-        --   lualine_a = {},
-        --   lualine_b = {},
-        --   lualine_c = {
-        --     {
-        --       "tabs",
-        --       max_length = vim.o.columns - 10,
-        --       mode = 2,
-        --       path = 1,
-        --       symbols = {
-        --         modified = " •",
-        --       },
-        --     },
-        --   },
-        --   lualine_x = {},
-        --   lualine_y = {},
-        --   lualine_z = {},
-        -- },
+        tabline = {
+          lualine_a = {},
+          lualine_b = {
+            {
+              "tabs",
+              cond = function()
+                return vim.fn.tabpagenr("$") > 1
+              end,
+              max_length = vim.o.columns - 10,
+              mode = 2,
+              path = 1,
+              symbols = {
+                modified = " •",
+              },
+            },
+          },
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        },
       }
     end,
   },
