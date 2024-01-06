@@ -128,7 +128,19 @@ return {
     "echasnovski/mini.clue",
     lazy = true,
     version = false,
-    keys = { "<leader>", '"', "'", "`", "g" },
+    keys = {
+      "<leader>",
+      "<localleader>",
+      { "<C-r>", mode = "i" },
+      { "<C-r>", mode = "c" },
+      { "<C-w>", mode = "n" },
+      { "<C-x>", mode = "i" },
+      '"',
+      "'",
+      "`",
+      "g",
+      "z",
+    },
     config = function()
       local miniclue = require("mini.clue")
 
@@ -137,12 +149,23 @@ return {
           miniclue.gen_clues.builtin_completion(),
           miniclue.gen_clues.g(),
           miniclue.gen_clues.marks(),
-          miniclue.gen_clues.registers(),
-          miniclue.gen_clues.windows(),
-          -- miniclue.gen_clues.z(),
+          miniclue.gen_clues.registers({
+            -- show_contents = true,
+          }),
+          miniclue.gen_clues.windows({
+            submode_move = true,
+            submode_navigate = true,
+            submode_resize = true,
+          }),
+          miniclue.gen_clues.z(),
         },
         triggers = {
           { mode = "n", keys = "<leader>" },
+          { mode = "n", keys = "<localleader>" },
+          { mode = "i", keys = "<C-r>" },
+          { mode = "c", keys = "<C-r>" },
+          { mode = "n", keys = "<C-w>" },
+          { mode = "i", keys = "<C-x>" },
           { mode = "n", keys = "g" },
           { mode = "x", keys = "g" },
           { mode = "n", keys = "'" },
@@ -151,10 +174,13 @@ return {
           { mode = "x", keys = "`" },
           { mode = "n", keys = '"' },
           { mode = "x", keys = '"' },
-          -- { mode = "n", keys = "z" },
-          -- { mode = "x", keys = "z" },
+          { mode = "n", keys = "z" },
+          { mode = "x", keys = "z" },
         },
         window = {
+          config = {
+            width = "auto",
+          },
           delay = 500,
         },
       })
