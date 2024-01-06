@@ -23,7 +23,7 @@ return {
           section_separators = "",
           disabled_filetypes = {
             "neo-tree",
-            "Trouble",
+            -- "Trouble",
           },
           theme = "catppuccin",
         },
