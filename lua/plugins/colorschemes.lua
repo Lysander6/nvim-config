@@ -5,6 +5,19 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      color_overrides = {
+        mocha = {
+          -- original
+          -- base = "#1e1e2e",
+          -- mantle = "#181825",
+          -- crust = "#11111B",
+          --
+          -- darker
+          base = "#1A1A28",
+          mantle = "#14141F",
+          crust = "#0E0E16",
+        },
+      },
       dim_inactive = {
         enabled = true,
       },
