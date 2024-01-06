@@ -76,10 +76,10 @@ return {
         --   return string.format("%s (%s)", tail, path)
         -- end,
         layout_config = {
-          height = 10,
+          height = 15,
         },
         border = false,
-        preview = false, -- NOTE: breaks git related pickers
+        preview = true, -- false, -- NOTE: breaks git related pickers
         results_title = false,
         scroll_strategy = "limit",
       })
