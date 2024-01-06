@@ -31,10 +31,40 @@ return {
           lualine_a = {
             window_number,
           },
-          lualine_b = {
-            "branch",
-          },
+          lualine_b = {},
           lualine_c = {
+            {
+              "filename",
+              file_status = false,
+              path = 1,
+            },
+            {
+              -- coloured file status
+              function()
+                if vim.bo.modified then
+                  return "•"
+                end
+                if vim.bo.readonly then
+                  return ""
+                end
+                return ""
+              end,
+              color = function()
+                if vim.bo.readonly then
+                  return "WarningMsg"
+                end
+                if vim.bo.modified then
+                  return { fg = "#f9e2af" }
+                end
+              end,
+              padding = { left = 0, right = 1 },
+            },
+            {
+              "searchcount",
+              icon = { "", color = { fg = "#F9E2AF" } },
+              -- icon = " ",
+              padding = { left = 0, right = 1 },
+            },
             {
               "diff",
               symbols = {
@@ -62,33 +92,6 @@ return {
               --   hint = " ",
               -- },
             },
-            "searchcount",
-            {
-              "filename",
-              file_status = false,
-              path = 1,
-            },
-            {
-              -- coloured file status
-              function()
-                if vim.bo.modified then
-                  return "•"
-                end
-                if vim.bo.readonly then
-                  return ""
-                end
-                return ""
-              end,
-              color = function()
-                if vim.bo.readonly then
-                  return "WarningMsg"
-                end
-                if vim.bo.modified then
-                  return { fg = "#f9e2af" }
-                end
-              end,
-              padding = { left = 0, right = 1 },
-            },
           },
           lualine_x = {
             {
@@ -104,6 +107,24 @@ return {
               },
             },
             "progress",
+            -- {
+            --   function()
+            --     local current = vim.fn.line(".")
+            --     local total = vim.fn.line("$")
+            --     local idx = math.ceil(current / total * 8) -- [1, 8] as indexing is 1-based
+            --     local symbols = {
+            --       "▔",
+            --       "🭶",
+            --       "🭷",
+            --       "🭸",
+            --       "🭹",
+            --       "🭺",
+            --       "🭻",
+            --       "▁",
+            --     }
+            --     return symbols[idx]
+            --   end,
+            -- },
             "location",
           },
           lualine_y = {},
@@ -147,7 +168,9 @@ return {
             },
           },
           lualine_c = {},
-          lualine_x = {},
+          lualine_x = {
+            "branch",
+          },
           lualine_y = {},
           lualine_z = {},
         },
