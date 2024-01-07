@@ -125,6 +125,11 @@ return {
         desc = "List previous searches",
       },
       {
+        "<leader>ss",
+        "<cmd>Telescope current_buffer_fuzzy_find<cr>",
+        desc = "Search buffer",
+      },
+      {
         "<leader>hh",
         "<cmd>Telescope help_tags<cr>",
         desc = "Search help",
