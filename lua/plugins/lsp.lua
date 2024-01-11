@@ -95,6 +95,15 @@ return {
           })
         end,
       })
+      require("lspconfig").graphql.setup({
+        filetypes = {
+          "graphql",
+          "typescript",
+          "javascript",
+          "typescriptreact",
+          "javascriptreact",
+        },
+      })
       require("lspconfig").gdscript.setup({
         capabilities = capabilities,
       })
