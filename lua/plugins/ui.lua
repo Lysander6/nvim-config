@@ -61,9 +61,11 @@ return {
             },
             {
               "searchcount",
-              icon = { "", color = { fg = "#F9E2AF" } },
-              -- icon = " ",
-              padding = { left = 0, right = 1 },
+              icon = "",
+              color = {
+                bg = "#F9E2AF",
+                fg = "#000000",
+              },
             },
             {
               "diff",
