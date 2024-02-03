@@ -27,6 +27,7 @@ return {
   },
   opts = {
     formatters_by_ft = {
+      astro = { { "prettierd", "prettier" } },
       html = { { "prettierd", "prettier" }, "rustywind" },
       javascript = { { "prettierd", "prettier" }, "rustywind" },
       javascriptreact = { { "prettierd", "prettier" }, "rustywind" },
