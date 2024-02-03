@@ -98,12 +98,12 @@ return {
           lualine_x = {
             {
               "copilot",
-              padding = { left = 1, right = 2 },
               show_colors = true,
               symbols = {
                 status = {
                   hl = {
                     enabled = "#74c7ec",
+                    sleep = "#74c7ec", -- cmp integration makes it appear "asleep", but in fact it is "enabled"
                   },
                 },
               },
