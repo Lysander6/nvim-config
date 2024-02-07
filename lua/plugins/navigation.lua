@@ -11,6 +11,12 @@ return {
       filesystem = {
         hijack_netrw_behavior = "open_current",
       },
+      sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        "document_symbols",
+      },
       window = {
         mappings = {
           ["<tab>"] = "open",
