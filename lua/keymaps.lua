@@ -67,13 +67,8 @@ map(
 )
 -- toggle paste mode
 map("n", "<leader>tp", "<cmd>set paste!<cr>", { desc = "Toggle paste mode" })
--- toggle highlight search
-map(
-  "n",
-  "<leader>sc",
-  "<cmd>set hlsearch!<cr>",
-  { desc = "Toggle search highlight" }
-)
+-- clear search highlights
+map("n", "<leader>sc", "<cmd>nohlsearch<cr>", { desc = "Clear search" })
 -- toggle quickfix list
 -- map("n", "<leader>el", "<cmd>copen<cr>")
 -- toggle inlay hints
