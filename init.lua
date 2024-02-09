@@ -18,6 +18,9 @@ vim.o.copyindent = true
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
 vim.o.expandtab = true
+vim.o.foldenable = false
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldmethod = "expr"
 vim.o.ignorecase = true
 vim.o.list = true
 vim.o.matchpairs = "(:),{:},[:],<:>,=:;"
