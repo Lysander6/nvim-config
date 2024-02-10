@@ -21,6 +21,7 @@ vim.o.expandtab = true
 vim.o.foldenable = false
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldmethod = "expr"
+vim.o.foldtext = ""
 vim.o.ignorecase = true
 vim.o.list = true
 vim.o.matchpairs = "(:),{:},[:],<:>,=:;"

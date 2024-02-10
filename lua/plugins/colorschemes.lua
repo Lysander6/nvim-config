@@ -49,6 +49,7 @@ return {
       },
       custom_highlights = function(colors)
         return {
+          Folded = { bg = colors.none, fg = colors.overlay0, style = {} },
           Visual = { bg = colors.surface1, style = {} },
           VisualNOS = { bg = colors.surface1, style = {} },
         }
