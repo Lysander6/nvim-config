@@ -9,6 +9,9 @@ return {
     },
     opts = {
       filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+        },
         hijack_netrw_behavior = "open_current",
       },
       sources = {
@@ -17,9 +20,29 @@ return {
         "git_status",
         "document_symbols",
       },
+      source_selector = {
+        winbar = true,
+        sources = {
+          { source = "filesystem" },
+          { source = "buffers" },
+          -- { source = "git_status" },
+          { source = "document_symbols" },
+        },
+      },
       window = {
         mappings = {
-          ["<tab>"] = "open",
+          ["<tab>"] = "toggle_node",
+          ["h"] = "close_node",
+          ["l"] = "open",
+          ["<C-h>"] = "prev_source",
+          ["<C-l>"] = "next_source",
+          ["P"] = {
+            "toggle_preview",
+            config = {
+              -- reuse window for preview
+              use_float = false,
+            },
+          },
         },
       },
     },
