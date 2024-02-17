@@ -57,6 +57,18 @@ return {
       indent = {
         enable = true,
       },
+      textobjects = {
+        lsp_interop = {
+          enable = true,
+          floating_preview_opts = {
+            border = "rounded",
+          },
+          peek_definition_code = {
+            ["<leader>df"] = "@function.outer",
+            ["<leader>dF"] = "@class.outer",
+          },
+        },
+      },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
