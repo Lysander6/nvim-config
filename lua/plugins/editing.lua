@@ -208,4 +208,19 @@ return {
     },
     config = true,
   },
+  {
+    "danymat/neogen",
+    lazy = true,
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    cmd = { "Neogen" },
+    config = { snippet_engine = "luasnip" },
+    keys = {
+      {
+        "<localleader>rdf",
+        "<cmd>Neogen<cr>",
+        mode = "n",
+        desc = "Document function",
+      },
+    },
+  },
 }
