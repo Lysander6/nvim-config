@@ -31,6 +31,7 @@ return {
       html = { { "prettierd", "prettier" }, "rustywind" },
       javascript = { { "prettierd", "prettier" }, "rustywind" },
       javascriptreact = { { "prettierd", "prettier" }, "rustywind" },
+      json = { { "prettierd", "prettier" } },
       lua = { "stylua" },
       markdown = { { "prettierd", "prettier" } },
       rust = { "rustfmt" },
