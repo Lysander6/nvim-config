@@ -201,6 +201,7 @@ return {
     opts = {
       ensure_installed = {
         "eslint",
+        "jsonls",
         "lua_ls",
         "typos_lsp",
       },
