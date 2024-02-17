@@ -14,6 +14,9 @@ return {
         },
         hijack_netrw_behavior = "open_current",
       },
+      document_symbols = {
+        follow_cursor = true,
+      },
       sources = {
         "filesystem",
         "buffers",
@@ -53,6 +56,12 @@ return {
         "<cmd>Neotree toggle reveal<cr>",
         mode = "",
         desc = "Toggle NeoTree",
+      },
+      {
+        "<leader>ps",
+        "<cmd>Neotree document_symbols toggle reveal<cr>",
+        mode = "",
+        desc = "Toggle NeoTree document symbols",
       },
     },
     init = function()
