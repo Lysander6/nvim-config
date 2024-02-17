@@ -17,6 +17,24 @@ return {
         end,
       }
 
+      -- local treesitter = require("nvim-treesitter")
+      --
+      -- local treesitter_node = {
+      --   function()
+      --     return treesitter.statusline({
+      --       type_patterns = {
+      --         "class",
+      --         "function",
+      --         "method",
+      --         "interface",
+      --         "type",
+      --         "var",
+      --         "variable",
+      --       },
+      --     })
+      --   end,
+      -- }
+
       return {
         options = {
           component_separators = "",
@@ -94,6 +112,7 @@ return {
               --   hint = " ",
               -- },
             },
+            -- treesitter_node,
           },
           lualine_x = {
             {
