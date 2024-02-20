@@ -203,6 +203,7 @@ return {
         "eslint",
         "jsonls",
         "lua_ls",
+        "prettierd",
         "typos_lsp",
       },
     },
