@@ -34,6 +34,7 @@ return {
       json = { { "prettierd", "prettier" } },
       lua = { "stylua" },
       markdown = { { "prettierd", "prettier" } },
+      mdx = { { "prettierd", "prettier" } },
       rust = { "rustfmt" },
       sql = { { "prettierd", "prettier" } },
       typescript = { { "prettierd", "prettier" }, "rustywind" },

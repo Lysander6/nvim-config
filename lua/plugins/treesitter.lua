@@ -72,6 +72,10 @@ return {
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
+
+      -- add `mdx` filetype
+      vim.filetype.add({ extension = { mdx = "mdx" } })
+      vim.treesitter.language.register("markdown", "mdx")
     end,
   },
 }
