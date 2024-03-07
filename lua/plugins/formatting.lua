@@ -36,6 +36,7 @@ return {
       markdown = { { "prettierd", "prettier" } },
       mdx = { { "prettierd", "prettier" } },
       rust = { "rustfmt" },
+      scss = { { "prettierd", "prettier" } },
       sql = { { "prettierd", "prettier" } },
       typescript = { { "prettierd", "prettier" }, "rustywind" },
       typescriptreact = { { "prettierd", "prettier" }, "rustywind" },
